@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:azmart/frontend/screens/home/category/categoryconst.dart';
 import 'package:azmart/frontend/screens/home/homeProductsConst.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +20,54 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+
+    List<String> assetImages = [
+  'assets/images/products/1.jpg',
+  'assets/images/products/2.jpg',
+  'assets/images/products/3.jpg',
+  'assets/images/products/4.jpg',
+  'assets/images/products/6.jpg',
+  'assets/images/products/7.jpg',
+  'assets/images/products/8.jpg',
+   'assets/images/products/9.jpg',
+    'assets/images/products/10.jpg',
+     'assets/images/products/11.jpg',
+      'assets/images/products/12.jpg',
+       'assets/images/products/13.jpg',
+        'assets/images/products/14.jpg',
+         'assets/images/products/15.jpg',
+          'assets/images/products/17.jpg',
+           'assets/images/products/16.jpg',
+  // Add more image paths as needed
+];
+ List<String> prices = [
+  '1000',
+    '1200',
+      '1100',
+        '800',
+          '1300',
+            '1400',
+              '1500',
+                '700',
+                  '900',
+  
+  // Add more image paths as needed
+];
+List<String> dates = [
+  '13/9/23',
+   '10/3/23',
+   '17/8/23',
+   '20/1/23',
+   '30/4/23',
+   '15/8/23',
+   '11/2/23',
+   '22/3/23',
+   '27/4/23',
+   '7/5/23',
+  
+  // Add more image paths as needed
+];
+
     return SafeArea(
         child: SingleChildScrollView(
       child: Column(
@@ -107,17 +157,24 @@ class _HomePageState extends State<HomePage> {
           GridView.builder(
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
-            itemCount: 5,
+            itemCount: 11,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, childAspectRatio: 0.73),
             itemBuilder: (context, index) {
+
+              // Randomly select an asset image path
+    Random random = Random();
+    String randomImage = assetImages[random.nextInt(assetImages.length)];
+      String randomPrices = prices[random.nextInt(prices.length)];
+      String randomDates = dates[random.nextInt(dates.length)];
+
               return HomeProductConst(
                   showFavourite: false,
                   image:
-                      "https://www.pngfind.com/pngs/m/183-1835546_free-png-download-ghol-fish-png-png-images.png",
-                  name: " Fresh Salmon",
-                  price: "1200",
-                  date: "12/3/23");
+                     randomImage,
+                  name: " Fresh Grocery",
+                  price: randomPrices.toString(),
+                  date: randomDates);
             },
           ),
         ],

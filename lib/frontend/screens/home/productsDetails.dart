@@ -6,7 +6,18 @@ import '../../../app_constant.dart';
 import '../../../components/common_button.dart';
 
 class ProductDetails extends StatefulWidget {
-  const ProductDetails({super.key});
+   String? image;
+
+  String? price;
+ 
+  
+  ProductDetails({
+    required this.image,
+  
+    required this.price,
+    
+   
+  });
 
   @override
   State<ProductDetails> createState() => _ProductDetailsState();
@@ -43,14 +54,16 @@ class _ProductDetailsState extends State<ProductDetails> {
               height: 250,
               width: double.infinity,
               child: Center(
-                child: Image.network(
-                    "https://img.freepik.com/free-photo/pile-fresh-vegetables_144627-16683.jpg?w=2000"),
+              child: Image.asset(
+    widget.image.toString(),
+    fit: BoxFit.contain, // Adjust the fit as per your requirements
+  ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 14),
               child: Text(
-                "Fresh Vegetables",
+                "Fresh Grocery",
                 style: GoogleFonts.poppins(
                   fontSize: 30,
                   fontWeight: FontWeight.w600,
@@ -63,7 +76,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Rs.1400",
+                    "Rs.${widget.price.toString()}",
                     style: GoogleFonts.poppins(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,

@@ -37,7 +37,9 @@ class AddCartConst extends StatelessWidget {
               width: 80,
               decoration: BoxDecoration(
                 image:
-                    DecorationImage(image: NetworkImage(image), fit: BoxFit.fill),
+                    DecorationImage(
+                      image: AssetImage(image), 
+                      fit: BoxFit.fill),
               ),
             ),
             Column(

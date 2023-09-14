@@ -13,6 +13,7 @@ class AddtoCartPage extends StatefulWidget {
 }
 
 class _AddtoCartPageState extends State<AddtoCartPage> {
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,8 +33,8 @@ class _AddtoCartPageState extends State<AddtoCartPage> {
     body: SingleChildScrollView(
       child: Column(
         children: [
-          AddCartConst(name: "Indian Fish", image: "https://www.pngfind.com/pngs/m/183-1835546_free-png-download-ghol-fish-png-png-images.png", price: "12000"),
-          AddCartConst(name: "Indian Fish", image: "https://www.pngfind.com/pngs/m/183-1835546_free-png-download-ghol-fish-png-png-images.png", price: "12000"),
+          AddCartConst(name: "Indian Fish", image: "assets/images/products/2.jpg", price: "12000"),
+          AddCartConst(name: "Indian Fish", image: "assets/images/products/3.jpg", price: "12000"),
         ],
       ),
     ),

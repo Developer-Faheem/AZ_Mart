@@ -40,15 +40,17 @@ class HomeProductConst extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                pageRoute(context, const ProductDetails());
+                pageRoute(context,  ProductDetails(image: image,price: price));
               },
               child: Container(
                 height: 150,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   image: DecorationImage(
-                    image: NetworkImage(image!),
-                    fit: BoxFit.cover,
+                     image: AssetImage(image!), // Replace with your asset image path
+                           fit: BoxFit.cover,
+                    // image: NetworkImage(image!),
+                    // fit: BoxFit.cover,
                   ),
                 ),
               ),
